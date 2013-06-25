@@ -1,0 +1,1 @@
+An approach by using a class instead of augmenting the basic type.
