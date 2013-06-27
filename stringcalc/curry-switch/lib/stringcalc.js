@@ -1,6 +1,14 @@
 (function (sandbox) {
   'use strict';
 
+  function add(a, b) {
+    return a + b;
+  }
+
+  function smallerThan(a, b) {
+    return a < b;
+  }
+
   String.prototype.calc = function () {
 
     var customDelimiter = [
@@ -17,12 +25,8 @@
       .replace(customDelimiter, ',')
       .split(',')
       .map(parseInt.flip().const().const().curry(10))
-      .filter(function (c) {
-        return (c < 1000);
-      })
-      .reduce(function (mem, c) {
-        return c + mem;
-      }, 0);
+      .filter(smallerThan.flip().const().const().curry(1000))
+      .reduce(add, 0);
   };
 
 }(this));
