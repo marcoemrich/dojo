@@ -23,7 +23,6 @@
       .reduce(function (mem, c) {
         return c + mem;
       }, 0);
-
   };
 
 }(this));
