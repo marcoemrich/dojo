@@ -16,7 +16,7 @@
       .replace(/\/\/./, '')
       .replace(customDelimiter, ',')
       .split(',')
-      .map(parseInt.flip().drop(2).curry(10))
+      .map(parseInt.flip().const().const().curry(10))
       .filter(function (c) {
         return (c < 1000);
       })
