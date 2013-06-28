@@ -1,7 +1,7 @@
 (function (sandbox) {
   'use strict';
 
-  Function.prototype.const = function () {
+  Function.prototype.constFn = function () {
     var fn = this;
 
     return function () {

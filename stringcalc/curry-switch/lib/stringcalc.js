@@ -24,8 +24,8 @@
       .replace(/\/\/./, '')
       .replace(customDelimiter, ',')
       .split(',')
-      .map(parseInt.flip().const().const().curry(10))
-      .filter(smallerThan.flip().const().const().curry(1000))
+      .map(parseInt.flip().constFn().constFn().curry(10))
+      .filter(smallerThan.flip().constFn().constFn().curry(1000))
       .reduce(add, 0);
   };
 

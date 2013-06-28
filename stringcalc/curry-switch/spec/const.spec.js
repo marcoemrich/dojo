@@ -3,20 +3,20 @@
 
   describe('Function', function () {
 
-    describe('#const()', function () {
+    describe('#constFn()', function () {
 
       it('is a function', function () {
-        expect(Function.prototype.const instanceof Function).toBeTruthy();
+        expect(Function.prototype.constFn instanceof Function).toBeTruthy();
       });
 
       it('returns a function', function () {
         var fn = function () {};
-        expect(fn.const() instanceof Function).toBeTruthy();
+        expect(fn.constFn() instanceof Function).toBeTruthy();
       });
 
       it('drops the last parameter', function () {
         var fn = jasmine.createSpy();
-        fn.const()(3, 4, 5);
+        fn.constFn()(3, 4, 5);
         expect(fn).toHaveBeenCalledWith(3, 4);
       });
 
@@ -25,7 +25,7 @@
           a: 10,
           fn: function (a) { this.a = a; }
         };
-        obj.fn = obj.fn.const();
+        obj.fn = obj.fn.constFn();
         obj.fn(3);
         expect(obj.a).toEqual(undefined);
       });
